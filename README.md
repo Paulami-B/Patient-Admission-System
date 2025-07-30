@@ -2,20 +2,23 @@
 
 ## Schemas
 
-1. Patient
+1. **Patient**
 
+    ```sql
     CREATE TABLE Patients (
-    	PatientID INT PRIMARY KEY AUTO_INCREMENT,
-       Name VARCHAR(60),
-        DoB	DATE,
+        PatientID INT PRIMARY KEY AUTO_INCREMENT,
+        Name VARCHAR(60),
+        DoB DATE,
         Gender ENUM('Male', 'Female', 'Other') NOT NULL,
         ContactNo CHAR(10)
-   );
+    );
+    ```
 
-2. Admissions
+2. **Admissions**
 
+    ```sql
     CREATE TABLE Admissions (
-        AdmissionID	INT	PRIMARY KEY AUTO_INCREMENT,
+        AdmissionID INT PRIMARY KEY AUTO_INCREMENT,
         PatientID INT,
         AdmissionDate DATE NOT NULL,
         DischargeDate DATE,
@@ -24,7 +27,7 @@
             ON DELETE CASCADE
             ON UPDATE CASCADE
     );
-
+    ```
 ## Functionalities
 
 1. Add New Patient
