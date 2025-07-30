@@ -4,25 +4,26 @@
 
 1. Patient
 
-    `CREATE TABLE Patients (`
-    	`PatientID INT PRIMARY KEY AUTO_INCREMENT,`
-       `Name VARCHAR(60),`
-        `DoB	DATE,`
-        `Gender ENUM('Male', 'Female', 'Other') NOT NULL,`
-        `ContactNo CHAR(10)`
-   `);`
+    CREATE TABLE Patients (
+    	PatientID INT PRIMARY KEY AUTO_INCREMENT,
+       Name VARCHAR(60),
+        DoB	DATE,
+        Gender ENUM('Male', 'Female', 'Other') NOT NULL,
+        ContactNo CHAR(10)
+   );
 
 2. Admissions
-`CREATE TABLE Admissions (`
-	`AdmissionID	INT	PRIMARY KEY AUTO_INCREMENT,`
-    `PatientID INT,`
-    `AdmissionDate DATE NOT NULL,`
-    `DischargeDate DATE,`
-    `Ward VARCHAR(50),`
-   `FOREIGN KEY (PatientID) REFERENCES Patients(PatientID)`
-        `ON DELETE CASCADE`
-        `ON UPDATE CASCADE`
-`);`
+
+    CREATE TABLE Admissions (
+        AdmissionID	INT	PRIMARY KEY AUTO_INCREMENT,
+        PatientID INT,
+        AdmissionDate DATE NOT NULL,
+        DischargeDate DATE,
+        Ward VARCHAR(50),
+        FOREIGN KEY (PatientID) REFERENCES Patients(PatientID)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
+    );
 
 ## Functionalities
 
